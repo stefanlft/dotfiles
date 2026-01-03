@@ -1,0 +1,41 @@
+layout {
+    label = "lock"
+    action = "hyprlock"
+    text = "Lock"
+    keybind = "l"
+}
+
+layout {
+    label = "logout"
+    action = "hyprctl dispatch exit"
+    text = "Logout"
+    keybind = "e"
+}
+
+layout {
+    label = "suspend"
+    action = "systemctl suspend"
+    text = "Suspend"
+    keybind = "s"
+}
+
+layout {
+    label = "hibernate"
+    action = "systemctl hibernate"
+    text = "Hibernate"
+    keybind = "h"
+}
+
+layout {
+    label = "reboot"
+    action = "systemctl reboot"
+    text = "Reboot"
+    keybind = "r"
+}
+
+layout {
+    label = "shutdown"
+    action = "systemctl poweroff"
+    text = "Shutdown"
+    keybind = "p"
+}

@@ -1,0 +1,120 @@
+{
+  "layer": "top",
+  "position": "left",
+  "width": 28,
+  "margin": "2 2t 2 2",
+  "spacing": 2,
+  "modules-left": [
+    "clock",
+    "custom/sep",
+    "custom/music",
+    "custom/sep",
+    "tray"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "temperature",
+    "custom/sep",
+    "pulseaudio",
+    "custom/sep",
+    "battery",
+    "custom/sep",
+    "network",
+    "custom/powermenu"
+  ],
+  "custom/sep": {
+       "format": "──"
+  },
+  "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "rotate":90,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+  "custom/powermenu": {
+    "on-click": "wlogout",
+    "format": "",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format-icons": {
+      "active": "",
+      "urgent": "",
+      "default": ""
+    }
+  },
+  "clock": {
+    "tooltip": true,
+    "format": "{:%H\n%M}",
+    "tooltip-format": "{:%Y-%m-%d}"
+  },
+  "tray": {
+    "icon-size": 18,
+    "show-passive-items": "true"
+  },
+  "temperature": {
+    "rotate": 90,
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "pulseaudio": {
+    "rotate": 90,
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon}  {volume}%",
+    "format-muted": "MUTE ",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 3,
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+  },
+  "battery": {
+      "states": {
+          "warning": 30,
+          "critical": 15
+      },
+      "rotate": 90,
+      "format": "{icon}   {capacity}%",
+      "format-charging": "󰢜 {capacity}%",
+      "format-plugged": "󰚥 {capacity}%",
+      "format-alt": "{icon} {capacity}%",
+      "format-icons": ["", "", "", "", ""]
+  },
+  "network": {
+    "interface": "wlan0",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-disconnected": "Disconnected",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "max-length": 50,
+    "on-click": "networkmanager_dmenu"
+  }
+}

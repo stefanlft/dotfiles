@@ -1,0 +1,116 @@
+@import "themes/mocha.css";
+* {
+  border: none;
+  font-family: "Hack", "Font Awesome 6 Pro";
+  font-size: 14px;
+  font-weight: 600;
+  background: none;
+}
+
+/* Glass effect for Waybar */
+window#waybar {
+  background: rgba(30, 30, 46, 0.55); /* Slightly opaque mocha base */
+  color: #a5adcb;
+  border-radius: 12px;                /* Rounded edges like macOS */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for sleek look */
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow for floating effect */
+}
+
+/* Module containers with frosted glass effect */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: rgba(24, 25, 38, 0.45);  /* Soft mantle glass */
+  border-radius: 12px;                  /* More rounded for macOS-like pill shape */
+  padding: 4px 4px;                   /* Add breathing room between elements */
+  margin: 4px;                          /* Clean spacing */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Slightly lighter border for glass pop */
+}
+
+/* Tooltip (with nice rounded corners and soft blur) */
+tooltip {
+  background: rgba(24, 25, 38, 0.85);  /* Slightly darker glass */
+  color: #a5adcb;
+  border-radius: 8px;
+  padding: 2px 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+}
+
+/* Subtle separator for clean look */
+#custom-sep {
+  color: rgba(255, 255, 255, 0.1);  /* Light, transparent separator */
+}
+
+
+#battery.critical {
+    color: #ff4444;
+    background: #330000;
+}
+
+#battery.warning {
+    color: #ffaa00;
+}
+
+
+tooltip * {
+  color: #a5adcb;
+  text-shadow: none;
+}
+.modules-center {
+}
+
+#workspaces,
+#clock,
+#custom-bluetooth_devices,
+#custom-powermenu,
+#pulseaudio,
+#tray {
+}
+#workspaces {
+  border-radius: 4px;
+  /* text-align: center;  Center the workspace buttons horizontally */
+  /* width: 100%;         Ensure the container spans the full width */
+}
+
+#workspaces button {
+  color: #5b6078;
+  background: none;
+  padding: 0;
+  margin: 0 6px;      /* Add spacing between workspace buttons */
+}
+
+#workspaces button:hover {
+  color: #a6da95;
+}
+
+#workspaces button.active {
+  color: #f5bde6;
+}
+
+
+#temperature {
+  color: #eed49f;
+}
+#clock {
+  font-weight: 600;
+  color: #8bd5ca;
+}
+#custom-bluetooth_devices {
+  color: #8aadf4;
+}
+#pulseaudio {
+  color: #a6da95;
+}
+#pulseaudio.muted {
+  color: #ed8796;
+}
+
+#custom-powermenu {
+  margin: 12px 0 0 0;
+  color: #6e738d;
+}
+
+#network {
+  color: #89b4fa;
+  padding: 0 10px;
+}

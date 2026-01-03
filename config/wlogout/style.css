@@ -1,0 +1,100 @@
+/* Catppuccin Macchiato palette */
+@define-color base      #24273a;
+@define-color mantle    #1e2030;
+@define-color crust     #181926;
+@define-color surface0  #363a4f;
+@define-color surface1  #494d64;
+@define-color surface2  #5b6078;
+
+@define-color text      #cad3f5;
+@define-color subtext0  #a5adcb;
+@define-color subtext1  #b8c0e0;
+
+@define-color blue      #8aadf4;
+@define-color lavender  #b7bdf8;
+@define-color mauve     #c6a0f6;
+@define-color red       #ed8796;
+@define-color green     #a6da95;
+@define-color yellow    #eed49f;
+
+/* Reset */
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+/* Background */
+window {
+    background-color: rgba(36, 39, 58, 0.95);
+}
+
+/* Buttons */
+button {
+    border-radius: 12px;
+    border: 2px solid @surface1;
+    color: @text;
+    background-color: @surface0;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28%;
+
+    margin: 12px;
+    padding: 20px;
+}
+
+/* Hover / Focus */
+button:hover {
+    background-color: @surface1;
+    border-color: @blue;
+}
+
+button:focus,
+button:active {
+    background-color: @surface2;
+    border-color: @mauve;
+    outline-style: none;
+}
+
+/* Icons */
+#lock {
+    background-image: image(
+        url("/usr/share/wlogout/icons/lock.png"),
+        url("/usr/local/share/wlogout/icons/lock.png")
+    );
+}
+
+#logout {
+    background-image: image(
+        url("/usr/share/wlogout/icons/logout.png"),
+        url("/usr/local/share/wlogout/icons/logout.png")
+    );
+}
+
+#suspend {
+    background-image: image(
+        url("/usr/share/wlogout/icons/suspend.png"),
+        url("/usr/local/share/wlogout/icons/suspend.png")
+    );
+}
+
+#hibernate {
+    background-image: image(
+        url("/usr/share/wlogout/icons/hibernate.png"),
+        url("/usr/local/share/wlogout/icons/hibernate.png")
+    );
+}
+
+#shutdown {
+    background-image: image(
+        url("/usr/share/wlogout/icons/shutdown.png"),
+        url("/usr/local/share/wlogout/icons/shutdown.png")
+    );
+}
+
+#reboot {
+    background-image: image(
+        url("/usr/share/wlogout/icons/reboot.png"),
+        url("/usr/local/share/wlogout/icons/reboot.png")
+    );
+}
